@@ -11,12 +11,12 @@ import {
 
 const navLinks = [
   { section: "home", label: "Home" },
-  { section: "vision", label: "Vision" },
+  { section: "vision", label: "Vision", isPage: true },
   { section: "events", label: "Events" },
   { section: "schedule", label: "Schedule" },
   { section: "achievements", label: "Achievements" },
   { section: "about-game", label: "About Game", isPage: true },
-  { section: "contact", label: "Contact" },
+  { section: "contact", label: "Contact Us", isPage: true },
 ];
 
 export function Navbar() {
@@ -82,7 +82,13 @@ export function Navbar() {
   ) => {
     e.preventDefault();
     if (link.isPage) {
-      navigate("/about-game");
+      if (link.section === "contact") {
+        navigate("/contact");
+      } else if (link.section === "vision") {
+        navigate("/vision");
+      } else {
+        navigate("/about-game");
+      }
     } else {
       scrollToSection(link.section);
     }
@@ -91,7 +97,11 @@ export function Navbar() {
 
   const getLinkClass = (link: typeof navLinks[0], isMobile = false) => {
     const isActive = link.isPage
-      ? location.pathname === "/about-game"
+      ? link.section === "contact"
+        ? location.pathname === "/contact"
+        : link.section === "vision"
+        ? location.pathname === "/vision"
+        : location.pathname === "/about-game"
       : isHomePage && activeSection === link.section;
 
     const base = isMobile
@@ -127,7 +137,15 @@ export function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.section}
-                href={link.isPage ? "/about-game" : `#${link.section}`}
+                href={
+                  link.isPage
+                    ? link.section === "contact"
+                      ? "/contact"
+                      : link.section === "vision"
+                      ? "/vision"
+                      : "/about-game"
+                    : `#${link.section}`
+                }
                 onClick={(e) => handleNavClick(e, link)}
                 className={getLinkClass(link)}
               >
@@ -142,7 +160,7 @@ export function Navbar() {
               variant="default"
               className="font-semibold uppercase tracking-wider"
               onClick={(e) =>
-                handleNavClick(e, { section: "contact", label: "Contact" })
+                handleNavClick(e, { section: "contact", label: "Contact", isPage: true })
               }
             >
               Join Now
@@ -178,7 +196,15 @@ export function Navbar() {
                 {navLinks.map((link) => (
                   <a
                     key={link.section}
-                    href={link.isPage ? "/about-game" : `#${link.section}`}
+                    href={
+                      link.isPage
+                        ? link.section === "contact"
+                          ? "/contact"
+                          : link.section === "vision"
+                          ? "/vision"
+                          : "/about-game"
+                        : `#${link.section}`
+                    }
                     onClick={(e) => handleNavClick(e, link)}
                     className={getLinkClass(link, true)}
                   >

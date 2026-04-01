@@ -41,7 +41,7 @@ export function TaglineSection() {
 
           <div className="grid grid-cols-3 gap-8 mt-16 pt-10 border-t border-border/50">
             <div className="text-center">
-              <div className="font-display text-3xl md:text-4xl font-bold text-primary">100+</div>
+              <div className="font-display text-3xl md:text-4xl font-bold text-primary">60+</div>
               <div className="text-sm text-muted-foreground mt-1">Active Players</div>
             </div>
             <div className="text-center">
@@ -49,7 +49,7 @@ export function TaglineSection() {
               <div className="text-sm text-muted-foreground mt-1">Tournaments</div>
             </div>
             <div className="text-center">
-              <div className="font-display text-3xl md:text-4xl font-bold text-primary">5+</div>
+              <div className="font-display text-3xl md:text-4xl font-bold text-primary">8+</div>
               <div className="text-sm text-muted-foreground mt-1">Years Strong</div>
             </div>
           </div>

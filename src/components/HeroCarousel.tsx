@@ -10,9 +10,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const slides = [
-  { image: "/images/hero-1.jpg", alt: "Ultimate frisbee diving catch" },
-  { image: "/images/hero-2.jpg", alt: "Team huddle on the field" },
-  { image: "/images/hero-3.jpg", alt: "Powerful disc throw" },
+  { image: "/images/2.jpeg", alt: "Ultimate frisbee diving catch" },
+  { image: "/images/3.jpeg", alt: "Team huddle on the field" },
+  { image: "/images/1.jpeg", alt: "Powerful disc throw" },
 ];
 
 export function HeroCarousel() {
