@@ -3,7 +3,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
 export const metadata = {
-  title: "GooseBumps",
+  title: "GooseBumps", 
+  icon: "./public/favicon.ico",
   description: "A thrilling adventure game",
 };
 
